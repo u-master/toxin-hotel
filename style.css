@@ -1,0 +1,11 @@
+.menu {
+  list-style: none; }
+  .menu__link {
+    text-decoration: none; }
+  .menu_horizontal .menu__item {
+    display: inline-block; }
+
+.logo {
+  width: 106px;
+  height: 40px; }
+

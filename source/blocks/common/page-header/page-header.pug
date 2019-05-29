@@ -1,0 +1,8 @@
+//- Used BEM-blocks
+include ../logo/logo
+include ../menu/menu
+
+mixin page-header(menuItems)
+    header.page-header&attributes(attributes)
+        +logo
+        +menu(menuItems)(class="menu_horizontal page-header__menu")

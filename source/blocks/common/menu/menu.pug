@@ -1,0 +1,7 @@
+//- Used BEM-blocks
+include menu__item
+
+mixin menu(menuItems)
+    ul.menu&attributes(attributes)
+        each item in menuItems
+            +menu__item(item)

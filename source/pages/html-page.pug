@@ -1,0 +1,29 @@
+//- Used BEM-blocks
+include ../blocks/common/page-header/page-header
+
+//- Variables
+-
+    var headerMenu = [
+        {name: "Home", isCurrent: true},
+        {name: "About Us", href: "#"},
+        {name: "Services", href: "#"},
+        {name: "Careers", href: "#"},
+        {name: "News", href: "#"},
+        {name: "Documentation", href: "#"}
+    ]
+
+block variables
+    - var pageTitle = 'Page'
+
+
+doctype html
+html
+    head(lang = 'ru')
+        meta(charset = 'utf-8')
+        title= pageTitle
+        block commonHead
+            link(rel="stylesheet", href="style.css")
+    body
+        +page-header(headerMenu)
+        block commonBody
+            p "Common page!"

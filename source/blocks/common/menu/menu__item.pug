@@ -1,0 +1,10 @@
+//- Used BEM-blocks
+include menu__link
+include menu__link_current
+
+mixin menu__item(item)
+    li.menu__item&attributes(attributes)
+        if item.isCurrent
+            +menu__link_current(item)
+        else
+            +menu__link(item)

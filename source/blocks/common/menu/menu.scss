@@ -1,0 +1,12 @@
+
+.menu {
+  list-style: none;
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &_horizontal &__item {
+    display: inline-block;
+  }
+}
