@@ -1,8 +1,18 @@
+//-
+    name: "ItemText"
+    href: "link.html#"
+    isCurrent: true
+    submenu: [{name: "SubmenuItemText",...},...]
+
 //- Used BEM-blocks
 include ../logo/logo
-include ../menu/menu
+unless pugModulesBlocksCommonMenu
+    include ../menu/menu
+include ../button/button
 
 mixin page-header(menuItems)
     header.page-header&attributes(attributes)
         +logo
         +menu(menuItems)(class="menu_horizontal page-header__menu")
+        +button( { name: "Login", href: "#" } )(class="page-header__login-button button_theme_white")
+        +button( { name: "Register", href: "#" } )(class="button_theme_purple")

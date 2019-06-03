@@ -1,10 +1,15 @@
 //- Used BEM-blocks
 include menu__link
 include menu__link_current
+include menu__submenu-button
 
 mixin menu__item(item)
     li.menu__item&attributes(attributes)
         if item.isCurrent
             +menu__link_current(item)
+        else if item.submenu
+            +menu__submenu-button(item)
         else
             +menu__link(item)
+
+

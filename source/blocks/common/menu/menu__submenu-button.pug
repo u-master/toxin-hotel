@@ -1,0 +1,8 @@
+
+//- Used BEM-blocks
+//- include menu
+
+mixin menu__submenu-button(item)
+    - var idSubmenu = "menu_submenu_"+item.submenu.idMenu;
+    a.menu__submenu-button&attributes(attributes)(href=item.href onclick="common.menu.menu_submenuButton_click('"+idSubmenu+"')")= item.name
+    +menu(item.submenu.menu)(style="visibility: hidden" class="menu_submenu" id=idSubmenu)

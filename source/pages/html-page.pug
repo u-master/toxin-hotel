@@ -3,14 +3,25 @@ include ../blocks/common/page-header/page-header
 
 //- Variables
 -
+    var servicesSubMenu = {
+    menu: [
+        {name: "Service 1", href: "#"},
+        {name: "Service 2", href: "#"},
+        {name: "Service 3", href: "#"}],
+    idMenu: "Service"
+    }
+
+-
     var headerMenu = [
         {name: "Home", isCurrent: true},
         {name: "About Us", href: "#"},
-        {name: "Services", href: "#"},
+        {name: "Services", href: "#", submenu: servicesSubMenu},
         {name: "Careers", href: "#"},
         {name: "News", href: "#"},
         {name: "Documentation", href: "#"}
     ]
+
+
 
 block variables
     - var pageTitle = 'Page'
@@ -23,7 +34,8 @@ html
         title= pageTitle
         block commonHead
             link(rel="stylesheet", href="style.css")
-    body
-        +page-header(headerMenu)
+    body.html-page
+        +page-header(headerMenu)(class="html-page__page-header")
         block commonBody
             p "Common page!"
+        script(src="js/common.js")

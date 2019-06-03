@@ -1,0 +1,7 @@
+//-
+    name: "ButtonText"
+    href: "link.html#"
+
+mixin button(content)
+    a.button(href=content.href)&attributes(attributes)
+        span.button__text= content.name

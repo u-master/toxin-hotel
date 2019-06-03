@@ -13,7 +13,8 @@ const common = {
     },
     output : {
         path: _paths().build(),
-        filename: 'js/[name].js'
+        filename: 'js/[name].js',
+        library: "common"
     }
 };
 

@@ -1,0 +1,69 @@
+
+
+.button {
+  font-family: $fontMain;
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: 0.067em;
+  color: $colorPurple;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover {
+    color: $colorDarkShade50;
+  }
+
+  &__text {
+    z-index: 1;
+    position: relative;
+  }
+
+  &_theme_white {
+    @extend %_theme;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-radius: inherit;
+      box-sizing: border-box;
+      background-color: $colorBackground;
+      background-clip: padding-box;
+      border: 2px solid transparent;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      color: $colorPurple;
+    }
+  }
+
+  &_theme_purple {
+    @extend %_theme;
+
+    color: $colorBackground;
+
+    &:hover {
+      color: $colorBackground;
+    }
+  }
+}
+
+
+%_theme {
+  padding: 9px 19px;
+  border-radius: 22px;
+
+  background: linear-gradient($colorPurple, $colorPurpleDark);
+  &:hover {
+    background:
+            linear-gradient(
+                            adjust-color($colorPurple, $alpha: -0.5),
+                            adjust-color($colorPurpleDark, $alpha: -0.5)
+            );
+  }
+}

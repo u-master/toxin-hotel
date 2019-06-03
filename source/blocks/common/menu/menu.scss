@@ -1,12 +1,54 @@
 
 .menu {
   list-style: none;
+  font-family: $fontMain;
+  font-weight: normal;
+  font-size: 14px;
+
+  &__submenu-button {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: -2px;
+    color: $colorDarkShade50;
+
+    &:hover {
+      color: $colorDarkShade;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-left: 8px;
+      margin-bottom: 2px;
+      border-left: 2px solid $colorDarkShade50;
+      border-bottom: 2px solid $colorDarkShade50;
+      transform: rotate(-45deg);
+    }
+  }
 
   &__link {
     text-decoration: none;
+    color: $colorDarkShade50;
+
+    &:hover {
+      color: $colorDarkShade;
+    }
+  }
+
+  &__link_current {
+    font-weight: bold;
+    color: $colorDarkShade75;
   }
 
   &_horizontal &__item {
-    display: inline-block;
+    margin-right: 29px;
+  }
+
+  &_submenu {
+    position: absolute;
+    border: 1px solid $colorDarkShade50;
+    padding: 8px 0 8px 25px;
   }
 }
