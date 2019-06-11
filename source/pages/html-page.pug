@@ -1,5 +1,6 @@
 //- Used BEM-blocks
 include ../blocks/common/page-header/page-header
+include ../blocks/common/range-slider/range-slider
 
 //- Variables
 -
@@ -34,8 +35,11 @@ html
         title= pageTitle
         block commonHead
             link(rel="stylesheet", href="style.css")
+            script(src="js/common.js")
     body.html-page
         +page-header(headerMenu)(class="html-page__page-header")
+        .slider-wrapper(style="width: 266px; margin: 100px;")
+            +range-slider("html-page__range-slider", "Range Slider", 0, 16000, 5000, 10000, "₽", "This is a double slider")
+            script common.rangeSlider.rangeSlider("html-page__range-slider")
         block commonBody
             p "Common page!"
-        script(src="js/common.js")

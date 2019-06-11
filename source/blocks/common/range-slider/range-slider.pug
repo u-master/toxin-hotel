@@ -1,0 +1,25 @@
+//- Used BEM-blocks
+include ../header-3/header-3
+include ../body-text/body-text
+
+mixin range-slider (idRangeSlider, caption, minValue, maxValue, lowCurValue, highCurValue, units, legend)
+    - var swap;
+    - if (minValue>maxValue) { swap = maxValue; maxValue = minValue; minValue = swap; }
+    - if (lowCurValue>highCurValue) { swap = highCurValue; highCurValue = lowCurValue; lowCurValue = swap; }
+    - var curLowPercent = 100 * (+lowCurValue-minValue) / (+maxValue-minValue);
+    - var curHighPercent = 100 * (+maxValue-highCurValue) / (+maxValue-minValue);
+    .range-slider&attributes(attributes)(id=idRangeSlider, data-min=minValue, data-max=maxValue)
+        .range-slider__header
+            +header-3(caption)(class="range-slider__caption")
+            .range-slider__values
+                span.range-slider__lowvalue= (""+lowCurValue).replace(/(\d{1,3})(?=(\d{3})*$)/g,"$1 ").trim()
+                input.range-slider__input-lowvalue(type="number" style="visibility: hidden;" min=minValue max=maxValue value=lowCurValue)
+                span.range-slider__units #{units} -
+                span.range-slider__highvalue= (""+highCurValue).replace(/(\d{1,3})(?=(\d{3})*$)/g," $1")
+                input.range-slider__input-highvalue(type="number" style="visibility: hidden;" min=minValue max=maxValue value=highCurValue)
+                span.range-slider__units= units
+        .range-slider__axis
+            .range-slider__toggler.range-slider__toggler_left(style=`left: ${curLowPercent}%;`)
+            .range-slider__axis-filling(style=`left: ${curLowPercent}%; width: ${100-curLowPercent-curHighPercent}%;`)
+            .range-slider__toggler.range-slider__toggler_right(style=`right: ${curHighPercent}%;`)
+        +body-text(legend)(class="range-slider__footer")

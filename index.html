@@ -4,16 +4,25 @@
     <meta charset="utf-8">
     <title>Index</title>
     <link rel="stylesheet" href="style.css">
+    <script src="js/common.js"></script>
   </head>
-  <body>
-    <header class="page-header">
+  <body class="html-page">
+    <header class="page-header html-page__page-header">
       <div class="logo"><a href="index.html"><img src="images/logo__logo.svg" alt="Toxin"></a></div>
       <ul class="menu menu_horizontal page-header__menu">
         <li class="menu__item"><span class="menu__link_current">Home</span>
         </li>
         <li class="menu__item"><a class="menu__link" href="#">About Us</a>
         </li>
-        <li class="menu__item"><a class="menu__link" href="#">Services</a>
+        <li class="menu__item"><a class="menu__submenu-button" href="#" onclick="common.menu.menu_submenuButton_click('menu_submenu_Service')">Services</a>
+          <ul class="menu menu_submenu" style="visibility: hidden;" id="menu_submenu_Service">
+            <li class="menu__item"><a class="menu__link" href="#">Service 1</a>
+            </li>
+            <li class="menu__item"><a class="menu__link" href="#">Service 2</a>
+            </li>
+            <li class="menu__item"><a class="menu__link" href="#">Service 3</a>
+            </li>
+          </ul>
         </li>
         <li class="menu__item"><a class="menu__link" href="#">Careers</a>
         </li>
@@ -21,8 +30,26 @@
         </li>
         <li class="menu__item"><a class="menu__link" href="#">Documentation</a>
         </li>
-      </ul>
+      </ul><a class="button page-header__login-button button_theme_white" href="#"><span class="button__text">Login</span></a><a class="button button_theme_purple" href="#"><span class="button__text">Register</span></a>
     </header>
+    <div class="slider-wrapper" style="width: 266px; margin: 100px;">
+      <div class="range-slider" id="html-page__range-slider" data-min="0" data-max="16000">
+        <div class="range-slider__header">
+          <h3 class="header-3 range-slider__caption">Range Slider</h3>
+          <div class="range-slider__values"><span class="range-slider__lowvalue">5 000</span>
+            <input class="range-slider__input-lowvalue" type="number" style="visibility: hidden;" min="0" max="16000" value="5000"><span class="range-slider__units">₽ -</span><span class="range-slider__highvalue"> 10 000</span>
+            <input class="range-slider__input-highvalue" type="number" style="visibility: hidden;" min="0" max="16000" value="10000"><span class="range-slider__units">₽</span>
+          </div>
+        </div>
+        <div class="range-slider__axis">
+          <div class="range-slider__toggler range-slider__toggler_left" style="left: 31.25%;"></div>
+          <div class="range-slider__axis-filling" style="left: 31.25%; width: 31.25%;"></div>
+          <div class="range-slider__toggler range-slider__toggler_right" style="right: 37.5%;"></div>
+        </div>
+        <p class="body-text range-slider__footer">This is a double slider</p>
+      </div>
+      <script>common.rangeSlider.rangeSlider("html-page__range-slider")</script>
+    </div>
     <p>"Common page!"</p>
   </body>
 </html>
