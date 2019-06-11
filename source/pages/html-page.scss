@@ -3,4 +3,12 @@
   &__page-header {
     margin-top: 22px;
   }
+
+  &__button {
+    box-sizing: border-box;
+    width: 320px;
+    margin-left: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 }

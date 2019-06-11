@@ -38,8 +38,10 @@ html
             script(src="js/common.js")
     body.html-page
         +page-header(headerMenu)(class="html-page__page-header")
-        .slider-wrapper(style="width: 266px; margin: 100px;")
+        //-.slider-wrapper(style="width: 266px; margin: 100px;")
             +range-slider("html-page__range-slider", "Range Slider", 0, 16000, 5000, 10000, "₽", "This is a double slider")
             script common.rangeSlider.rangeSlider("html-page__range-slider")
+        //- +button({name: "Перейти к оплате-шмаплате недоперезарплате!", href: "#"})(class="html-page__button button_arrow_right")
+
         block commonBody
             p "Common page!"
