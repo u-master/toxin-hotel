@@ -1,0 +1,73 @@
+//- lastnumber: 15
+    currentnumber: 2
+    legend: "1 – 12 из 100+ вариантов аренды"
+
+//- Used BEM-blocks
+include ../body-text/body-text
+
+mixin pagination__elem(number)
+    li.pagination__elem
+        a.pagination__link(href="#")= number
+
+mixin pagination__elem_current(number)
+    li.pagination__elem.pagination__elem_current
+        span.pagination__inactive= number
+
+mixin pagination__elem_etc
+    li.pagination__elem.pagination__elem_etc
+        span.pagination__inactive …
+
+mixin pagination__elem_next
+    li.pagination__elem.pagination__elem_next
+        a.pagination__next(href="#")
+
+mixin pagination__elem_prev
+    li.pagination__elem.pagination__elem_prev
+        a.pagination__prev(href="#")
+
+mixin pagination(lastNumber, currentNumber, legend)
+    - var i = 1;
+    .pagination&attributes(attributes)
+        ul.pagination__list
+            if (+currentNumber > 1)
+                +pagination__elem_prev
+            if (lastNumber <= 5)
+                - i = 1;
+                while i <= lastNumber
+                    if (i === +currentNumber)
+                        +pagination__elem_current(i)
+                    else
+                        +pagination__elem(i)
+                    - i++;
+            else
+                if (currentNumber <= 3)
+                    each i in [1, 2, 3]
+                        if (i === +currentNumber)
+                            +pagination__elem_current(i)
+                        else
+                            +pagination__elem(i)
+                    if (+currentNumber === 3)
+                         +pagination__elem(4)
+                    +pagination__elem_etc
+                    +pagination__elem(lastNumber)
+                else if (currentNumber > lastNumber - 3)
+                    +pagination__elem(1)
+                    +pagination__elem_etc
+                    if (+currentNumber === lastNumber - 2)
+                        +pagination__elem(lastNumber-3)
+                    each i in [lastNumber-2, lastNumber-1, lastNumber]
+                        if (i === +currentNumber)
+                            +pagination__elem_current(i)
+                        else
+                            +pagination__elem(i)
+                else
+                     +pagination__elem(1)
+                     +pagination__elem_etc
+                     +pagination__elem(currentNumber-1)
+                     +pagination__elem_current(currentNumber)
+                     +pagination__elem(currentNumber+1)
+                     +pagination__elem_etc
+                     +pagination__elem(lastNumber)
+            if (+currentNumber < +lastNumber)
+                +pagination__elem_next
+        +body-text(legend)(class="pagination__legend")

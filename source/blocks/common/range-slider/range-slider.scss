@@ -69,7 +69,7 @@
   }
 
   &__toggler {
-    background-color: $colorGreen;
+    background: linear-gradient(to bottom, $colorGreen, $colorGreenDark) no-repeat 0 0;
     border-radius: 50%;
     width: 12px;
     height: 12px;
@@ -87,7 +87,7 @@
   }
 
   &__axis-filling {
-    background-color: $colorGreen;
+    background: linear-gradient(to bottom, $colorGreen, $colorGreenDark) no-repeat 0 0;
     height: 6px;
     position: absolute;
     z-index: 1;

@@ -23,3 +23,4 @@ mixin range-slider (idRangeSlider, caption, minValue, maxValue, lowCurValue, hig
             .range-slider__axis-filling(style=`left: ${curLowPercent}%; width: ${100-curLowPercent-curHighPercent}%;`)
             .range-slider__toggler.range-slider__toggler_right(style=`right: ${curHighPercent}%;`)
         +body-text(legend)(class="range-slider__footer")
+        script!= `common.rangeSlider.rangeSlider('${idRangeSlider}')`

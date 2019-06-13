@@ -1,0 +1,80 @@
+
+
+.pagination {
+  color: $colorDarkShade50;
+  font-family: $fontMain;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__elem {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border-radius: 22px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__next {
+    content: "";
+    display: inline-block;
+    margin-top: 2px;
+    border-top: 2px solid $colorBackground;
+    border-right: 2px solid $colorBackground;
+    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background-image: linear-gradient(-45deg, transparent 6px, $colorBackground 6px, $colorBackground 8px, transparent 8px);
+  }
+
+  &__prev {
+    content: "";
+    display: inline-block;
+    margin-top: 2px;
+    border-bottom: 2px solid $colorBackground;
+    border-left: 2px solid $colorBackground;
+    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background-image: linear-gradient(-45deg, transparent 6px, $colorBackground 6px, $colorBackground 8px, transparent 8px);
+  }
+
+  &__legend {
+    margin-top: 8px;
+    margin-left: 5px;
+  }
+
+  &__elem_current {
+    background: linear-gradient(to bottom, $colorPurple 0%, $colorPurpleDark 100%);
+
+    & .pagination__inactive {
+      color: white;
+      font-weight: bold;
+    }
+  }
+
+  &__elem_next {
+    background: linear-gradient(to bottom, $colorGreen 0%, $colorGreenDark 100%);
+  }
+
+  &__elem_prev {
+    background: linear-gradient(to bottom, $colorGreen 0%, $colorGreenDark 100%);
+  }
+}
