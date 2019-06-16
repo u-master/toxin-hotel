@@ -248,6 +248,54 @@
   .pagination__elem_prev {
     background: linear-gradient(to bottom, #6FCF97 0%, #66D2EA 100%); }
 
+.easy-checkbox {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .easy-checkbox__item {
+    margin-bottom: 10.5px; }
+  .easy-checkbox__label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer; }
+  .easy-checkbox__check {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    margin-right: 10px;
+    flex-shrink: 0;
+    position: relative; }
+    .easy-checkbox__check::before {
+      content: "";
+      display: none;
+      position: absolute;
+      width: 6px;
+      height: 2px;
+      top: 9px;
+      left: 4px;
+      transform: rotate(45deg);
+      background-color: #8CA4F9; }
+    .easy-checkbox__check::after {
+      content: "";
+      display: none;
+      position: absolute;
+      width: 2px;
+      height: 8px;
+      top: 5px;
+      left: 10px;
+      transform: rotate(45deg);
+      background: linear-gradient(to bottom, #BC9CFF, #8CA4F9); }
+  .easy-checkbox__text {
+    margin: 2px 0 0;
+    flex-grow: 1;
+    line-height: 18px; }
+  .easy-checkbox__item > input:checked ~ .easy-checkbox__label > .easy-checkbox__check {
+    border-color: #BC9CFF; }
+    .easy-checkbox__item > input:checked ~ .easy-checkbox__label > .easy-checkbox__check::before, .easy-checkbox__item > input:checked ~ .easy-checkbox__label > .easy-checkbox__check::after {
+      display: block; }
+
 .page-header {
   display: flex;
   align-items: center;
@@ -273,6 +321,10 @@
 
 .html-page__pagination {
   margin-left: 50px; }
+
+.html-page__checkbox {
+  margin-left: 50px;
+  width: 225px; }
 
 body {
   padding: 0;

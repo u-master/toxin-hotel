@@ -1,7 +1,8 @@
 //- Used BEM-blocks
 include ../blocks/common/page-header/page-header
-include ../blocks/common/range-slider/range-slider
-include ../blocks/common/pagination/pagination
+//- include ../blocks/common/range-slider/range-slider
+//- include ../blocks/common/pagination/pagination
+include ../blocks/common/checkbox/checkbox
 
 //- Variables
 -
@@ -23,6 +24,13 @@ include ../blocks/common/pagination/pagination
         {name: "Documentation", href: "#"}
     ]
 
+-
+    var checkboxTest = [
+        {id: "smoke", text: "Можно курить", value: "smoke"},
+        {id: "pets", text: "Можно с питомцами", value: "pets", isChecked: true},
+        {id: "guest", text: "Можно пригласить гостей (до 10 человек)", value: "guest", isChecked: true}
+    ]
+
 
 
 block variables
@@ -39,9 +47,10 @@ html
             script(src="js/common.js")
     body.html-page
         +page-header(headerMenu)(class="html-page__page-header")
-        .slider-wrapper(style="width: 266px; margin: 100px;")
+        //- .slider-wrapper(style="width: 266px; margin: 100px;")
             +range-slider("html-page__range-slider", "Range Slider", 0, 16000, 5000, 10000, "₽", "This is a double slider")
         //- +button({name: "Перейти к оплате-шмаплате недоперезарплате!", href: "#"})(class="html-page__button button_arrow_right")
         //- +pagination(15, 10, "1 – 12 из 100+ вариантов аренды")(class="html-page__pagination")
+        +checkbox("test", checkboxTest)(class="html-page__checkbox")
         block commonBody
             p "Common page!"

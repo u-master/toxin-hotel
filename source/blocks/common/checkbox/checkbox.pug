@@ -1,0 +1,19 @@
+//-
+    nameGroup : name of checkboxes group
+    content - array of JSON:
+        id : ID of checkbox
+        text : "Text of checkbox item"
+        value : "Value for server"
+        isChecked: true - if checked, otherwise - false
+
+//- Used BEM-blocks
+include ../body-text/body-text
+
+mixin checkbox(nameGroup, content)
+    ul.easy-checkbox&attributes(attributes)
+        each item in content
+            li.easy-checkbox__item
+                input(type="checkbox" id=item.id name=nameGroup value=item.value checked=item.isChecked style="display: none")
+                label.easy-checkbox__label(for=item.id)
+                    .easy-checkbox__check
+                    +body-text(item.text)(class="easy-checkbox__text")

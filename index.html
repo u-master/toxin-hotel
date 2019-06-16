@@ -32,24 +32,29 @@
         </li>
       </ul><a class="button page-header__login-button button_theme_white" href="#"><span class="button__text">Login</span></a><a class="button button_theme_purple" href="#"><span class="button__text">Register</span></a>
     </header>
-    <div class="slider-wrapper" style="width: 266px; margin: 100px;">
-      <div class="range-slider" id="html-page__range-slider" data-min="0" data-max="16000">
-        <div class="range-slider__header">
-          <h3 class="header-3 range-slider__caption">Range Slider</h3>
-          <div class="range-slider__values"><span class="range-slider__lowvalue">5 000</span>
-            <input class="range-slider__input-lowvalue" type="number" style="visibility: hidden;" min="0" max="16000" value="5000"><span class="range-slider__units">₽ -</span><span class="range-slider__highvalue"> 10 000</span>
-            <input class="range-slider__input-highvalue" type="number" style="visibility: hidden;" min="0" max="16000" value="10000"><span class="range-slider__units">₽</span>
-          </div>
-        </div>
-        <div class="range-slider__axis">
-          <div class="range-slider__toggler range-slider__toggler_left" style="left: 31.25%;"></div>
-          <div class="range-slider__axis-filling" style="left: 31.25%; width: 31.25%;"></div>
-          <div class="range-slider__toggler range-slider__toggler_right" style="right: 37.5%;"></div>
-        </div>
-        <p class="body-text range-slider__footer">This is a double slider</p>
-        <script>common.rangeSlider.rangeSlider('html-page__range-slider')</script>
-      </div>
-    </div>
+    <ul class="easy-checkbox html-page__checkbox">
+      <li class="easy-checkbox__item">
+        <input type="checkbox" id="smoke" name="test" value="smoke" style="display: none">
+        <label class="easy-checkbox__label" for="smoke">
+          <div class="easy-checkbox__check"></div>
+          <p class="body-text easy-checkbox__text">Можно курить</p>
+        </label>
+      </li>
+      <li class="easy-checkbox__item">
+        <input type="checkbox" id="pets" name="test" value="pets" checked style="display: none">
+        <label class="easy-checkbox__label" for="pets">
+          <div class="easy-checkbox__check"></div>
+          <p class="body-text easy-checkbox__text">Можно с питомцами</p>
+        </label>
+      </li>
+      <li class="easy-checkbox__item">
+        <input type="checkbox" id="guest" name="test" value="guest" checked style="display: none">
+        <label class="easy-checkbox__label" for="guest">
+          <div class="easy-checkbox__check"></div>
+          <p class="body-text easy-checkbox__text">Можно пригласить гостей (до 10 человек)</p>
+        </label>
+      </li>
+    </ul>
     <p>"Common page!"</p>
   </body>
 </html>
