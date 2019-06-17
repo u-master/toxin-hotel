@@ -1,0 +1,19 @@
+//-
+    nameGroup : name of radiobutton group
+    content - array of JSON:
+        id : ID of radiobutton
+        text : "Text of radiobutton item"
+        value : "Value for server"
+        isChecked: true - if checked, otherwise - false
+
+//- Used BEM-blocks
+include ../body-text/body-text
+
+mixin radiobuttons(nameGroup, content)
+    ul.radiobuttons&attributes(attributes)
+        each item in content
+            li.radiobuttons__item
+                input(type="radio" id=item.id name=nameGroup value=item.value checked=item.isChecked style="display: none")
+                label.radiobuttons__label(for=item.id)
+                    .radiobuttons__check
+                    +body-text(item.text)(class="radiobuttons__text")

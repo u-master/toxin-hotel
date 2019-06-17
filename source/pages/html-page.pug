@@ -2,16 +2,17 @@
 include ../blocks/common/page-header/page-header
 //- include ../blocks/common/range-slider/range-slider
 //- include ../blocks/common/pagination/pagination
-include ../blocks/common/checkbox/checkbox
+//- include ../blocks/common/checkbox/checkbox
+//- include ../blocks/common/radiobutton/radiobutton
 
 //- Variables
 -
     var servicesSubMenu = {
-    menu: [
-        {name: "Service 1", href: "#"},
-        {name: "Service 2", href: "#"},
-        {name: "Service 3", href: "#"}],
-    idMenu: "Service"
+        menu: [
+            {name: "Service 1", href: "#"},
+            {name: "Service 2", href: "#"},
+            {name: "Service 3", href: "#"}],
+        idMenu: "Service"
     }
 
 -
@@ -24,13 +25,18 @@ include ../blocks/common/checkbox/checkbox
         {name: "Documentation", href: "#"}
     ]
 
--
+//-
     var checkboxTest = [
         {id: "smoke", text: "Можно курить", value: "smoke"},
         {id: "pets", text: "Можно с питомцами", value: "pets", isChecked: true},
         {id: "guest", text: "Можно пригласить гостей (до 10 человек)", value: "guest", isChecked: true}
     ]
 
+//-
+    var radiobuttonTest = [
+        {id: "man", text: "Мужчина", value: "man", isChecked: "true"},
+        {id: "woman", text: "Женщина", value: "woman"}
+    ];
 
 
 block variables
@@ -51,6 +57,7 @@ html
             +range-slider("html-page__range-slider", "Range Slider", 0, 16000, 5000, 10000, "₽", "This is a double slider")
         //- +button({name: "Перейти к оплате-шмаплате недоперезарплате!", href: "#"})(class="html-page__button button_arrow_right")
         //- +pagination(15, 10, "1 – 12 из 100+ вариантов аренды")(class="html-page__pagination")
-        +checkbox("test", checkboxTest)(class="html-page__checkbox")
+        //- +checkbox("test", checkboxTest)(class="html-page__checkbox")
+        //- +radiobuttons("sex", radiobuttonTest)(class="html-page__radiobuttons")
         block commonBody
             p "Common page!"
