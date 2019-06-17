@@ -4,6 +4,7 @@ include ../blocks/common/page-header/page-header
 //- include ../blocks/common/pagination/pagination
 //- include ../blocks/common/checkbox/checkbox
 //- include ../blocks/common/radiobutton/radiobutton
+include ../blocks/common/toggle/toggle
 
 //- Variables
 -
@@ -59,5 +60,6 @@ html
         //- +pagination(15, 10, "1 – 12 из 100+ вариантов аренды")(class="html-page__pagination")
         //- +checkbox("test", checkboxTest)(class="html-page__checkbox")
         //- +radiobuttons("sex", radiobuttonTest)(class="html-page__radiobuttons")
+        +toggle("subscriber", "subscriber", "Получать спецпредложения", "subscriber", false)(class="html-page__toggle")
         block commonBody
             p "Common page!"

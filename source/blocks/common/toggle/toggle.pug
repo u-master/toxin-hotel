@@ -1,0 +1,16 @@
+//-
+    name : name of toggle
+    id : ID of toggle
+    text : "Text of toggle"
+    value : "Value for server"
+    isOn: true - if toggle on, otherwise - false
+
+//- Used BEM-blocks
+include ../body-text/body-text
+
+mixin toggle(nameToggle, idToggle, text, valueToggle, isOn)
+    .toggle&attributes(attributes)
+        input(type="checkbox" id=idToggle name=nameToggle value=valueToggle checked=isOn style="display: none")
+        label.toggle__label(for=idToggle)
+            .toggle__check
+            +body-text(text)(class="toggle__text")
