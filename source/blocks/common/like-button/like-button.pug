@@ -1,0 +1,18 @@
+//-
+    name : name of like button
+    idToggle : ID of like toggle
+    amount (likes) : 21
+    isOn: true - if toggle on, otherwise - false
+
+//- Used BEM-blocks
+//include ../body-text/body-text
+
+mixin like-button(nameLikeButton, idToggle, amountLikes, isOn)
+    .like-button&attributes(attributes)
+        - var dataLike = ((isOn ? amountLikes : (amountLikes+1))+"").replace(/(\d{1,3})(?=(\d{3})*$)/g, " $1");
+        - var dataNoLike = ((isOn ? (amountLikes-1) : amountLikes)+"").replace(/(\d{1,3})(?=(\d{3})*$)/g, " $1");
+        input(type="checkbox" id=idToggle name=nameLikeButton value=isOn checked=isOn style="display: none")
+        label.like-button__label(for=idToggle)
+            svg.like-button__check
+                path(d="M5,1.8 a1.2,1.2 30 0,1 3.1,2.5 l-3.3,3.5 l-3.3,-3.5 a1.2,1.2 -30 0,1 3.1,-2.5 z")
+            span.like-button__text(data-like=dataLike data-nolike=dataNoLike)

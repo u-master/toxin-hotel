@@ -1,0 +1,100 @@
+
+
+.like-button {
+  display: inline-block;
+
+  &__label {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    cursor: pointer;
+    min-width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, $colorDarkShade25, $colorDarkShade25);
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      background-color: $colorBackground;
+      background-clip: content-box;
+      z-index: 1;
+    }
+  }
+
+  &__check {
+    width: 10px;
+    height: 8px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    z-index: 2;
+    margin-left: 5px;
+
+    & path {
+      stroke: $colorDarkShade25;
+      stroke-width: 1px;
+      fill: $colorBackground;
+    }
+  }
+
+  &__text {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  &__text::before {
+    content: "";
+    display: inline;
+    position: relative;
+    margin: 0 8px 0 3px;
+    line-height: 22px;
+    z-index: 2;
+    font-family: $fontMain;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 9px;
+    color: $colorDarkShade25;
+  }
+
+  & > input:checked ~ &__label {
+    background: $colorPurple linear-gradient(to bottom, $colorPurple, $colorPurpleDark);
+    transition: background 0.5s ease;
+  }
+
+  & > input:checked ~ &__label > &__check > path {
+      stroke: $colorPurple;
+      fill: $colorPurple;
+      transition: all 0.5s ease;
+    }
+
+  & > input:checked ~ &__label > &__text::before {
+    content: attr(data-like);
+    color: $colorPurple;
+    transition: color 0.5s ease;
+  }
+
+  & > input:not(checked) ~ &__label > &__text::before {
+    content: attr(data-nolike);
+  }
+
+  &__label:hover {
+    background: linear-gradient(to bottom, $colorDarkShade50, $colorDarkShade50);
+  }
+
+  &__label:hover &__check path {
+    fill: $colorDarkShade25;
+  }
+
+  &__label:hover &__text::before {
+    color: $colorDarkShade50;
+  }
+}
