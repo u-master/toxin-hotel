@@ -477,7 +477,7 @@
       height: 100%;
       top: 0;
       left: 0;
-      background: url("data:image/svg+xml;utf8,\a         <svg xmlns='http://www.w3.org/2000/svg'>\a           <polygon fill='%23FFFFFF'\a           points='10,4 11.71,7.51 16.15,7.68 12.83,10.86 13.51,14.8 10,13 6.49,14.8 7.08,10.86 3.93,7.68 8.11,7.51'/>\a         </svg>") no-repeat; }
+      background: url("data:image/svg+xml;utf8,\a         <svg xmlns='http://www.w3.org/2000/svg'>\a           <polygon fill='%23FFFFFF'\a           points='10,4 11.71,7.51 16.15,7.68 12.83,10.86 14.16,15.6 10,13 5.94,15.6 7.08,10.86 3.93,7.68 8.11,7.51'/>\a         </svg>") no-repeat; }
   .rate-button > #rating-1:checked ~ .rate-button__rate_1::after,
   .rate-button > #rating-2:checked ~ .rate-button__rate_1::after,
   .rate-button > #rating-2:checked ~ .rate-button__rate_2::after,

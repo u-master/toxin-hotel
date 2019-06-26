@@ -42,7 +42,7 @@
       background: url("data:image/svg+xml;utf8,
         <svg xmlns='http://www.w3.org/2000/svg'>
           <polygon fill='%23#{unquote(str-slice(quote($colorBackground),2))}'
-          points='10,4 11.71,7.51 16.15,7.68 12.83,10.86 13.51,14.8 10,13 6.49,14.8 7.08,10.86 3.93,7.68 8.11,7.51'/>
+          points='10,4 11.71,7.51 16.15,7.68 12.83,10.86 14.16,15.6 10,13 5.94,15.6 7.08,10.86 3.93,7.68 8.11,7.51'/>
         </svg>") no-repeat;
     }
   }
