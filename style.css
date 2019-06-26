@@ -263,7 +263,7 @@
     width: 18px;
     height: 18px;
     border-radius: 4px;
-    border: 1px solid rgba(31, 32, 65, 0.5);
+    border: 1px solid rgba(31, 32, 65, 0.25);
     margin-right: 10px;
     flex-shrink: 0;
     position: relative; }
@@ -290,11 +290,210 @@
   .easy-checkbox__text {
     margin: 2px 0 0;
     flex-grow: 1;
-    line-height: 18px; }
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.5); }
   .easy-checkbox__item > input:checked ~ .easy-checkbox__label > .easy-checkbox__check {
     border-color: #BC9CFF; }
     .easy-checkbox__item > input:checked ~ .easy-checkbox__label > .easy-checkbox__check::before, .easy-checkbox__item > input:checked ~ .easy-checkbox__label > .easy-checkbox__check::after {
       display: block; }
+
+.radiobuttons {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .radiobuttons__item {
+    margin-bottom: 10.5px;
+    display: inline-block;
+    margin-right: 16px; }
+    .radiobuttons__item:last-of-type {
+      margin-right: 0; }
+  .radiobuttons__label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer; }
+  .radiobuttons__check {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    margin-right: 10px;
+    flex-shrink: 0;
+    position: relative; }
+    .radiobuttons__check::before {
+      content: "";
+      display: none;
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: 3px;
+      left: 3px;
+      border-radius: 50%;
+      background: linear-gradient(to bottom, #BC9CFF, #8CA4F9); }
+  .radiobuttons__text {
+    margin: 0;
+    flex-grow: 1;
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.5); }
+  .radiobuttons__item > input:checked ~ .radiobuttons__label > .radiobuttons__text {
+    color: rgba(31, 32, 65, 0.75); }
+  .radiobuttons__item > input:checked ~ .radiobuttons__label > .radiobuttons__check {
+    border-color: #BC9CFF; }
+    .radiobuttons__item > input:checked ~ .radiobuttons__label > .radiobuttons__check::before {
+      display: block; }
+
+.toggle__label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer; }
+
+.toggle__check {
+  display: inline-block;
+  width: 38px;
+  height: 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  margin-right: 10px;
+  flex-shrink: 0;
+  position: relative; }
+  .toggle__check::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, rgba(31, 32, 65, 0.25), rgba(31, 32, 65, 0.25));
+    transition: background, left 0.5s ease; }
+
+.toggle__text {
+  margin: 0;
+  flex-grow: 1;
+  line-height: 18px; }
+
+.toggle > input:checked ~ .toggle__label > .toggle__check {
+  border-color: #BC9CFF; }
+  .toggle > input:checked ~ .toggle__label > .toggle__check::before {
+    background: #BC9CFF linear-gradient(to bottom, #BC9CFF, #8CA4F9);
+    left: 23px; }
+
+.like-button {
+  display: inline-block; }
+  .like-button__label {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    cursor: pointer;
+    min-width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, rgba(31, 32, 65, 0.25), rgba(31, 32, 65, 0.25));
+    position: relative; }
+    .like-button__label::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      background-color: #FFFFFF;
+      background-clip: content-box;
+      z-index: 1; }
+  .like-button__check {
+    width: 10px;
+    height: 8px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    z-index: 2;
+    margin-left: 5px; }
+    .like-button__check path {
+      stroke: rgba(31, 32, 65, 0.25);
+      stroke-width: 1px;
+      fill: #FFFFFF; }
+  .like-button__text {
+    flex-grow: 1;
+    text-align: center; }
+  .like-button__text::before {
+    content: "";
+    display: inline;
+    position: relative;
+    margin: 0 8px 0 3px;
+    line-height: 22px;
+    z-index: 2;
+    font-family: "Montserrat", "Verdana", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 9px;
+    color: rgba(31, 32, 65, 0.25); }
+  .like-button > input:checked ~ .like-button__label {
+    background: #BC9CFF linear-gradient(to bottom, #BC9CFF, #8CA4F9);
+    transition: background 0.5s ease; }
+  .like-button > input:checked ~ .like-button__label > .like-button__check > path {
+    stroke: #BC9CFF;
+    fill: #BC9CFF;
+    transition: all 0.5s ease; }
+  .like-button > input:checked ~ .like-button__label > .like-button__text::before {
+    content: attr(data-like);
+    color: #BC9CFF;
+    transition: color 0.5s ease; }
+  .like-button > input:not(checked) ~ .like-button__label > .like-button__text::before {
+    content: attr(data-nolike); }
+  .like-button__label:hover {
+    background: linear-gradient(to bottom, rgba(31, 32, 65, 0.5), rgba(31, 32, 65, 0.5)); }
+  .like-button__label:hover .like-button__check path {
+    fill: rgba(31, 32, 65, 0.25); }
+  .like-button__label:hover .like-button__text::before {
+    color: rgba(31, 32, 65, 0.5); }
+
+.rate-button {
+  border: none;
+  display: inline-block; }
+  .rate-button__rate {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    cursor: pointer; }
+    .rate-button__rate::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: url("data:image/svg+xml;utf8,\a         <svg xmlns='http://www.w3.org/2000/svg'>\a           <defs>\a             <linearGradient id='rate-button__star-gradient' x1='0' x2='0' y1='0' y2='1'>\a               <stop offset='0%' stop-color='%23BC9CFF'/>\a               <stop offset='100%' stop-color='%238CA4F9'/>\a             </linearGradient>\a           </defs>\a           <polygon fill='url(%23rate-button__star-gradient)'\a           points='10,0 12.86,5.86 20,6.11 14.71,11.43 16.86,20 10,15 3.14,20 5.14,11.43 0,6.11 6.86,5.86'/>\a         </svg>") no-repeat; }
+    .rate-button__rate::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: url("data:image/svg+xml;utf8,\a         <svg xmlns='http://www.w3.org/2000/svg'>\a           <polygon fill='%23FFFFFF'\a           points='10,4 11.71,7.51 16.15,7.68 12.83,10.86 13.51,14.8 10,13 6.49,14.8 7.08,10.86 3.93,7.68 8.11,7.51'/>\a         </svg>") no-repeat; }
+  .rate-button > #rating-1:checked ~ .rate-button__rate_1::after,
+  .rate-button > #rating-2:checked ~ .rate-button__rate_1::after,
+  .rate-button > #rating-2:checked ~ .rate-button__rate_2::after,
+  .rate-button > #rating-3:checked ~ .rate-button__rate_1::after,
+  .rate-button > #rating-3:checked ~ .rate-button__rate_2::after,
+  .rate-button > #rating-3:checked ~ .rate-button__rate_3::after,
+  .rate-button > #rating-4:checked ~ .rate-button__rate_1::after,
+  .rate-button > #rating-4:checked ~ .rate-button__rate_2::after,
+  .rate-button > #rating-4:checked ~ .rate-button__rate_3::after,
+  .rate-button > #rating-4:checked ~ .rate-button__rate_4::after,
+  .rate-button > #rating-5:checked ~ .rate-button__rate_1::after,
+  .rate-button > #rating-5:checked ~ .rate-button__rate_2::after,
+  .rate-button > #rating-5:checked ~ .rate-button__rate_3::after,
+  .rate-button > #rating-5:checked ~ .rate-button__rate_4::after,
+  .rate-button > #rating-5:checked ~ .rate-button__rate_5::after {
+    display: none; }
 
 .page-header {
   display: flex;
@@ -325,6 +524,17 @@
 .html-page__checkbox {
   margin-left: 50px;
   width: 225px; }
+
+.html-page__radiobuttons {
+  margin-left: 50px;
+  width: 225px; }
+
+.html-page__toggle {
+  margin-left: 50px;
+  width: 260px; }
+
+.html-page__like-button {
+  margin-left: 6px; }
 
 body {
   padding: 0;

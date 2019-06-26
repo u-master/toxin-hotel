@@ -1,0 +1,17 @@
+//-
+    nameGroup : name of rate group
+    currentRate : current rate, cap
+
+mixin rate-button(nameGroup, currentRate=0)
+    fieldset.rate-button&attributes(attributes)
+        input(type="radio" name=nameGroup id=nameGroup+"-1" value="1" checked=`${currentRate==1}` style="display: none")
+        input(type="radio" name=nameGroup id=nameGroup+"-2" value="2" checked=`${currentRate==2}` style="display: none")
+        input(type="radio" name=nameGroup id=nameGroup+"-3" value="3" checked=`${currentRate==3}` style="display: none")
+        input(type="radio" name=nameGroup id=nameGroup+"-4" value="4" checked=`${currentRate==4}` style="display: none")
+        input(type="radio" name=nameGroup id=nameGroup+"-5" value="5" checked=`${currentRate==5}` style="display: none")
+        input(type="radio" name=nameGroup id=nameGroup+"-0" value="0" checked=`${currentRate==0}` style="display: none")
+        label.rate-button__rate(class="rate-button__rate_1" for=nameGroup+"-1")
+        label.rate-button__rate(class="rate-button__rate_2" for=nameGroup+"-2")
+        label.rate-button__rate(class="rate-button__rate_3" for=nameGroup+"-3")
+        label.rate-button__rate(class="rate-button__rate_4" for=nameGroup+"-4")
+        label.rate-button__rate(class="rate-button__rate_5" for=nameGroup+"-5")

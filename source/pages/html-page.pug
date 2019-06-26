@@ -5,7 +5,8 @@ include ../blocks/common/page-header/page-header
 //- include ../blocks/common/checkbox/checkbox
 //- include ../blocks/common/radiobutton/radiobutton
 //- include ../blocks/common/toggle/toggle
-include ../blocks/common/like-button/like-button
+//- include ../blocks/common/like-button/like-button
+include ../blocks/common/rate-button/rate-button
 
 //- Variables
 -
@@ -62,8 +63,9 @@ html
         //- +checkbox("test", checkboxTest)(class="html-page__checkbox")
         //- +radiobuttons("sex", radiobuttonTest)(class="html-page__radiobuttons")
         //- +toggle("subscriber", "subscriber", "Получать спецпредложения", "subscriber", false)(class="html-page__toggle")
-        +like-button("likes1", "likes1", 2, false)(class="html-page__like-button")
-        +like-button("likes2", "likes2", 12, true)(class="html-page__like-button")
-        +like-button("likes3", "likes3", 5678912, true)(class="html-page__like-button")
+        //- +like-button("likes1", "likes1", 2, false)(class="html-page__like-button")
+        //- +like-button("likes2", "likes2", 12, true)(class="html-page__like-button")
+        //- +like-button("likes3", "likes3", 5678912, true)(class="html-page__like-button")
+        +rate-button("rating")
         block commonBody
             p "Common page!"
