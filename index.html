@@ -32,19 +32,8 @@
         </li>
       </ul><a class="button page-header__login-button button_theme_white" href="#"><span class="button__text">Login</span></a><a class="button button_theme_purple" href="#"><span class="button__text">Register</span></a>
     </header>
-    <fieldset class="rate-button">
-      <input type="radio" name="rating" id="rating-1" value="1" checked="false" style="display: none">
-      <input type="radio" name="rating" id="rating-2" value="2" checked="false" style="display: none">
-      <input type="radio" name="rating" id="rating-3" value="3" checked="false" style="display: none">
-      <input type="radio" name="rating" id="rating-4" value="4" checked="false" style="display: none">
-      <input type="radio" name="rating" id="rating-5" value="5" checked="false" style="display: none">
-      <input type="radio" name="rating" id="rating-0" value="0" checked="true" style="display: none">
-      <label class="rate-button__rate rate-button__rate_1" for="rating-1"></label>
-      <label class="rate-button__rate rate-button__rate_2" for="rating-2"></label>
-      <label class="rate-button__rate rate-button__rate_3" for="rating-3"></label>
-      <label class="rate-button__rate rate-button__rate_4" for="rating-4"></label>
-      <label class="rate-button__rate rate-button__rate_5" for="rating-5"></label>
-    </fieldset>
+    <input class="text-field html-page__text-field" type="text" id="textField" name="textField" placeholder="ДД.ММ.ГГГГ" required pattern="\d{2}.\d{2}.\d{4}" value="">
+    <script>common.textField.initTextFieldMask("textField", "00.00.0000")</script>
     <p>"Common page!"</p>
   </body>
 </html>

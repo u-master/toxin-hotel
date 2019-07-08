@@ -3,6 +3,7 @@
 
 let menu = require('./../blocks/common/menu/menu');
 let rangeSlider = require('./../blocks/common/range-slider/range-slider');
+let textField = require('./../blocks/common/text-field/text-field');
 
 
 
@@ -10,3 +11,4 @@ let rangeSlider = require('./../blocks/common/range-slider/range-slider');
 
 exports.menu = menu;
 exports.rangeSlider = rangeSlider;
+exports.textField = textField;

@@ -1,0 +1,14 @@
+//-
+    idText - id of input
+    value - "Default text"
+    placeholder - "Placeholder when no text"
+    isRequired - boolean
+    patternText - input pattern
+
+    jquery, jquery-mask-plugin REQUIRED!
+
+
+mixin text-field(idText, value, placeholder, isRequired=false, patternText=false, inputMask="")
+    input.text-field(type="text" id=idText name=idText placeholder=placeholder required=isRequired pattern=patternText value=value)&attributes(attributes)
+    unless inputMask===""
+        script!= `common.textField.initTextFieldMask("${idText}", "${inputMask}")`

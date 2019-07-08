@@ -1,0 +1,25 @@
+
+.text-field {
+  background: $colorBackground;
+  border: 1px solid $colorDarkShade25;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: $fontMain;
+  height: 44px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: $colorDarkShade25;
+  padding: 0 14px;
+  letter-spacing: -0.15px;
+
+  &:focus::placeholder {
+    color: transparent;
+  }
+
+  &:focus,
+  &:hover {
+    color: $colorDarkShade75;
+  }
+}
