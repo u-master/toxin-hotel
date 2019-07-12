@@ -87,6 +87,17 @@ var common =
 /************************************************************************/
 /******/ ({
 
+/***/ "./blocks/common/counter/counter.js":
+/*!******************************************!*\
+  !*** ./blocks/common/counter/counter.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = {\r\n\r\n    counter: function (idCounter, maxVal = 0) {\r\n        var eCounterInput = document.getElementById(idCounter);\r\n        var eCounterDisplay = document.querySelector(\"#\"+idCounter+\" ~ .counter__value\");\r\n        var eCounterMoreButton = document.querySelector(\"#\"+idCounter+\" ~ .counter__more\");\r\n        var eCounterLessButton = document.querySelector(\"#\"+idCounter+\" ~ .counter__less\");\r\n\r\n        function more () {\r\n            var currentValue = +eCounterDisplay.innerHTML;\r\n            if (maxVal && currentValue>=maxVal)\r\n                return;\r\n            if (currentValue===0)\r\n                eCounterLessButton.classList.remove(\"counter__less_disabled\");\r\n            eCounterDisplay.innerHTML=(++currentValue);\r\n            eCounterInput.value = currentValue;\r\n            if (currentValue>=maxVal)\r\n                eCounterMoreButton.classList.add(\"counter__more_disabled\");\r\n        }\r\n\r\n        function less () {\r\n            var currentValue = +eCounterDisplay.innerHTML;\r\n            if (currentValue<=0)\r\n                return;\r\n            if (maxVal && currentValue===maxVal)\r\n                eCounterMoreButton.classList.remove(\"counter__more_disabled\");\r\n            eCounterDisplay.innerHTML=(--currentValue);\r\n            eCounterInput.value = currentValue;\r\n            if (currentValue<=0)\r\n                eCounterLessButton.classList.add(\"counter__less_disabled\");\r\n        }\r\n\r\n        eCounterMoreButton.addEventListener(\"click\", more);\r\n        eCounterLessButton.addEventListener(\"click\", less);\r\n    }\r\n};\n\n//# sourceURL=webpack://common/./blocks/common/counter/counter.js?");
+
+/***/ }),
+
 /***/ "./blocks/common/menu/menu.js":
 /*!************************************!*\
   !*** ./blocks/common/menu/menu.js ***!
@@ -127,7 +138,7 @@ eval("/* WEBPACK VAR INJECTION */(function($) {\r\n__webpack_require__(/*! jquer
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("\r\n// Common JS\r\n\r\nlet menu = __webpack_require__(/*! ./../blocks/common/menu/menu */ \"./blocks/common/menu/menu.js\");\r\nlet rangeSlider = __webpack_require__(/*! ./../blocks/common/range-slider/range-slider */ \"./blocks/common/range-slider/range-slider.js\");\r\nlet textField = __webpack_require__(/*! ./../blocks/common/text-field/text-field */ \"./blocks/common/text-field/text-field.js\");\r\n\r\n\r\n\r\n//console.log(\"Common loaded...\");\r\n\r\nexports.menu = menu;\r\nexports.rangeSlider = rangeSlider;\r\nexports.textField = textField;\n\n//# sourceURL=webpack://common/./js/common.js?");
+eval("\r\n// Common JS\r\n\r\nlet menu = __webpack_require__(/*! ./../blocks/common/menu/menu */ \"./blocks/common/menu/menu.js\");\r\nlet rangeSlider = __webpack_require__(/*! ./../blocks/common/range-slider/range-slider */ \"./blocks/common/range-slider/range-slider.js\");\r\nlet textField = __webpack_require__(/*! ./../blocks/common/text-field/text-field */ \"./blocks/common/text-field/text-field.js\");\r\nlet counter = __webpack_require__(/*! ./../blocks/common/counter/counter */ \"./blocks/common/counter/counter.js\");\r\n\r\n\r\n\r\n//console.log(\"Common loaded...\");\r\n\r\nexports.menu = menu;\r\nexports.rangeSlider = rangeSlider;\r\nexports.textField = textField;\r\nexports.counter = counter;\n\n//# sourceURL=webpack://common/./js/common.js?");
 
 /***/ }),
 

@@ -1,0 +1,21 @@
+
+//- Used BEM-blocks
+include ../header-3/header-3
+
+mixin counter(idCounter, nameCounter, initValue, maxValue = 0)
+    -
+        var moreIsDisabled = (maxValue!==0 && initValue===maxValue);
+        var moreModificator = (maxValue!==0 && initValue===maxValue) ? "counter__more_disabled" : "";
+        var lessIsDisabled = (initValue===0);
+        var lessModificator = (initValue===0) ? "counter__less_disabled" : "";
+        if (initValue<0)
+            initValue = 0;
+        if (initValue>maxValue)
+            initValue = maxValue;
+
+    .counter&attributes(attributes)
+        input(type="hidden" name=nameCounter id=idCounter value=initValue)
+        button.counter__less(class=lessModificator) -
+        +header-3(initValue)(class="counter__value")
+        button.counter__more(class=moreModificator) +
+        script!= `common.counter.counter("${idCounter}", ${maxValue})`

@@ -1,0 +1,31 @@
+//-
+    idSelect - id of select
+    placeholder - placeholder of select
+    elements - array of objects
+        {
+            label: "Label of input"
+            typeElem: one of such: "counter", "date", "date-interval"
+            idElem: "IdOfInput"
+            nameElem: "Name of input for server"
+            value: Initial value
+        }
+    callbackCaption: "function changeCaptionOnElementChange() {...}"
+    isHasApply: true - then display Apply button, false - if no Apply
+    callbackApply: "function onApplyButtonClick() {...}"
+
+
+//- Used BEM-blocks
+include ../body-text/body-text
+include ../header-3/header-3
+include ../counter/counter
+
+mixin dropdown (idSelect, placeholder, elements, callbackCaption = "", isHasApply = false, callbackApply = "")
+    .dropdown&attributes(attributes)
+        ul.dropdown__list
+            each elem in elements
+                label.dropdown__item-label(for=elem.idElem)
+                    +header-3(elem.label)
+                case elem.typeElem
+                    when "counter"
+
+

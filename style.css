@@ -514,6 +514,46 @@
   .text-field:focus, .text-field:hover {
     color: rgba(31, 32, 65, 0.75); }
 
+.counter {
+  vertical-align: middle;
+  /*&__less:not(&__less_disabled),
+  &__more:not(&__more_disabled) {
+    cursor: pointer;
+  }*/ }
+  .counter__less, .counter__more {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    background-color: #FFFFFF;
+    font-family: "Montserrat", "Verdana", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    color: rgba(31, 32, 65, 0.5); }
+    .counter__less_disabled, .counter__more_disabled {
+      opacity: 0.25; }
+  .counter__less {
+    margin-right: -34px; }
+    .counter__less:not(.counter__less_disabled) {
+      cursor: pointer; }
+  .counter__more {
+    margin-left: -34px; }
+    .counter__more:not(.counter__more_disabled) {
+      cursor: pointer; }
+  .counter__value {
+    display: inline-block;
+    min-width: 92px;
+    padding-left: 32px;
+    padding-right: 32px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0;
+    z-index: -1;
+    position: relative; }
+
 .page-header {
   display: flex;
   align-items: center;

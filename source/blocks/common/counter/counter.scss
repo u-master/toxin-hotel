@@ -1,0 +1,59 @@
+
+
+
+.counter {
+  vertical-align: middle;
+
+  &__less,
+  &__more {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    border:  1px solid $colorDarkShade25;
+    background-color: $colorBackground;
+    font-family: $fontMain;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    color: $colorDarkShade50;
+
+    &_disabled {
+      opacity: 0.25;
+    }
+  }
+
+  /*&__less:not(&__less_disabled),
+  &__more:not(&__more_disabled) {
+    cursor: pointer;
+  }*/
+
+  &__less {
+    margin-right: -34px;
+
+    &:not(&_disabled) {
+      cursor: pointer;
+    }
+  }
+
+  &__more {
+    margin-left: -34px;
+
+    &:not(&_disabled) {
+      cursor: pointer;
+    }
+  }
+
+  &__value {
+    display: inline-block;
+    min-width: 92px;
+    padding-left: 32px;
+    padding-right: 32px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0;
+    z-index: -1;
+    position: relative;
+  }
+}

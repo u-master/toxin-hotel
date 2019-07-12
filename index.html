@@ -32,8 +32,13 @@
         </li>
       </ul><a class="button page-header__login-button button_theme_white" href="#"><span class="button__text">Login</span></a><a class="button button_theme_purple" href="#"><span class="button__text">Register</span></a>
     </header>
-    <input class="text-field html-page__text-field" type="text" id="textField" name="textField" placeholder="ДД.ММ.ГГГГ" required pattern="\d{2}.\d{2}.\d{4}" value="">
-    <script>common.textField.initTextFieldMask("textField", "00.00.0000")</script>
+    <div class="counter">
+      <input type="hidden" name="nameCounter" id="idCounter" value="0">
+      <button class="counter__less counter__less_disabled">-</button>
+      <h3 class="header-3 counter__value">0</h3>
+      <button class="counter__more">+</button>
+      <script>common.counter.counter("idCounter", 2)</script>
+    </div>
     <p>"Common page!"</p>
   </body>
 </html>

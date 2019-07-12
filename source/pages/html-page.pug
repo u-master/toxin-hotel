@@ -7,7 +7,8 @@ include ../blocks/common/page-header/page-header
 //- include ../blocks/common/toggle/toggle
 //- include ../blocks/common/like-button/like-button
 //- include ../blocks/common/rate-button/rate-button
-include ../blocks/common/text-field/text-field
+//- include ../blocks/common/text-field/text-field
+include ../blocks/common/counter/counter
 
 //- Variables
 -
@@ -69,6 +70,7 @@ html
         //- +like-button("likes2", "likes2", 12, true)(class="html-page__like-button")
         //- +like-button("likes3", "likes3", 5678912, true)(class="html-page__like-button")
         //- +rate-button("rating")
-        +text-field("textField", "", "ДД.ММ.ГГГГ", true, "\\d{2}.\\d{2}.\\d{4}", "00.00.0000")(class="html-page__text-field")
+        //- +text-field("textField", "", "ДД.ММ.ГГГГ", true, "\\d{2}.\\d{2}.\\d{4}", "00.00.0000")(class="html-page__text-field")
+        +counter("idCounter", "nameCounter", 0, 2)
         block commonBody
             p "Common page!"
